@@ -8,3 +8,39 @@ members = [
     "client",
 ]
 exclude = ["libraries"]
+
+[workspace.dependencies]
+# Use latest available Solana 2.3.x from crates.io with flexible versioning
+solana-program = "2.3"
+solana-sdk = "2.3"
+solana-client = "2.3"
+solana-transaction-status = "2.3"
+solana-account-decoder = "2.3"
+solana-zk-sdk = "2.3"
+# SPL token libraries - use versions compatible with Solana 2.3.x
+spl-token = { version = "6.0.0", features = ["no-entrypoint"] }
+spl-associated-token-account = { version = "4.0.0", features = ["no-entrypoint"] }
+# External dependencies
+raydium_amm = { git = "https://github.com/LyndsFi/raydium-amm", branch = "master" }
+anchor-client = "=0.29.0"
+anchor-lang = "=0.29.0"
+anchor-spl = { version = "=0.29.0", features = ["memo", "metadata"] }
+anyhow = "1.0.53"
+clap = { version = "4.1.8", features = ["derive"] }
+toml = "0.8.19"
+hex = "0.4.3"
+bs58 = "0.5.1"
+safe-transmute = "0.11.2"
+arrayref = "0.3.6"
+rand = "0.7.3"
+bytemuck = "1.7.3"
+serde_json = "1.0.78"
+serde = { version = "1.0", features = ["derive"] }
+base64 = "0.22.1"
+bincode = "1.3.3"
+colorful = "0.2.2"
+spl-memo = "=4.0.0"
+# Moved to workspace.dependencies section above
+
+# Temporary: remove patches until we get basic compilation working
+# [patch.crates-io]
